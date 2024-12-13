@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,12 +21,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
     Button signUp;
     EditText name,email,password;
     TextView login;
     FirebaseAuth auth;
+    ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,8 @@ public class RegisterActivity extends AppCompatActivity {
             return insets;
         });
 
-
+        progressBar = findViewById(R.id.regisbar);
+        progressBar.setVisibility(View.GONE);
         auth = FirebaseAuth.getInstance();
         signUp = findViewById(R.id.Sign_btn);
         name = findViewById(R.id.name_user);
@@ -51,6 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 createUser();
+                progressBar.setVisibility(View.VISIBLE);
 
             }
         });
@@ -93,7 +99,9 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(RegisterActivity.this, "Register Successful", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
                         }else {
+                            progressBar.setVisibility(View.GONE);
                             Toast.makeText(RegisterActivity.this, "Error:"+task.getException(), Toast.LENGTH_SHORT).show();
                         }
                     }
