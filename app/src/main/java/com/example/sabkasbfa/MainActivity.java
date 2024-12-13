@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         login = findViewById(R.id.loginpage);
         register = findViewById(R.id.registerpage);
 
