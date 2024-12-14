@@ -11,8 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     LinearLayout login,register;
+    FirebaseAuth auth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +28,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        auth = FirebaseAuth.getInstance();
         login = findViewById(R.id.loginpage);
         register = findViewById(R.id.registerpage);
+
+        if (auth.getCurrentUser()!=null){
+
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+            finish();
+        }
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
