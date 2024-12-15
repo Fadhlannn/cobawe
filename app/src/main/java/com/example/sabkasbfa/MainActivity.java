@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.loginpage);
         register = findViewById(R.id.registerpage);
 
-        if (auth.getCurrentUser()!=null){
-
-            startActivity(new Intent(MainActivity.this, HomeActivity.class));
-            finish();
-        }
+//        if (auth.getCurrentUser()!=null){
+//
+//            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+//            finish();
+//        }
 
 
         login.setOnClickListener(new View.OnClickListener() {
