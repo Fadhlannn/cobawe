@@ -1,5 +1,6 @@
 package com.example.sabkasbfa.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -34,7 +35,7 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewAllAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewAllAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
         holder.name.setText(list.get(position).getName());
         holder.description.setText(list.get(position).getDescription());
@@ -54,18 +55,28 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
     public int getItemCount() {
         return list.size();
     }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView name,description,price;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             imageView = itemView.findViewById(R.id.img_all_item);
             name = itemView.findViewById(R.id.name_all_item);
             description = itemView.findViewById(R.id.desc_all_item);
             price = itemView.findViewById(R.id.price_all_item);
         }
     }
+//    public class ViewHolder extends RecyclerView.ViewHolder {
+//        ImageView imageView;
+//        TextView name,description,price;
+//
+//        public ViewHolder(@NonNull View itemView) {
+//            super(itemView);
+//
+//            imageView = itemView.findViewById(R.id.img_all_item);
+//            name = itemView.findViewById(R.id.name_all_item);
+//            description = itemView.findViewById(R.id.desc_all_item);
+//            price = itemView.findViewById(R.id.price_all_item);
+//        }
+//    }
 }

@@ -49,7 +49,9 @@ public class activity_detail extends AppCompatActivity {
 
         if(viewAllModels != null){
             Glide.with(getApplicationContext()).load(viewAllModels.getImg_url()).into(img_detail);
-            price.setText("Price: "+viewAllModels.getPrice());
+            price.setText(String.format("Price:Rp%d", viewAllModels.getPrice()));
+            //price.setText("Price: Rp. "+viewAllModels.getPrice());
+            totalprice = viewAllModels.getPrice() * totalquantity;
         }
         image_plus.setOnClickListener(new View.OnClickListener() {
             @Override

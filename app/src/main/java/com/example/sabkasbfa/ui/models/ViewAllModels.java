@@ -7,14 +7,15 @@ public class ViewAllModels implements Serializable {
     String description;
     String type;
     String img_url;
-    String price;
+    int price;
+
 
     public ViewAllModels() {
     }
 
-    public ViewAllModels(String description, String name, String type, String img_url, String price) {
-        this.description = description;
+    public ViewAllModels(String name, String description, String type, String img_url, int price) {
         this.name = name;
+        this.description = description;
         this.type = type;
         this.img_url = img_url;
         this.price = price;
@@ -52,11 +53,11 @@ public class ViewAllModels implements Serializable {
         this.img_url = img_url;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }
