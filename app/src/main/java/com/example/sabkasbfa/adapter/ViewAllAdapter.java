@@ -1,6 +1,7 @@
 package com.example.sabkasbfa.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.sabkasbfa.R;
+import com.example.sabkasbfa.activity_detail;
 import com.example.sabkasbfa.ui.models.ViewAllModels;
 
 import java.util.List;
@@ -37,6 +39,15 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
         holder.name.setText(list.get(position).getName());
         holder.description.setText(list.get(position).getDescription());
         holder.price.setText(list.get(position).getPrice());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, activity_detail.class);
+                intent.putExtra("detail",list.get(position));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

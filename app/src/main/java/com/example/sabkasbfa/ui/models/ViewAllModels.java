@@ -1,6 +1,8 @@
 package com.example.sabkasbfa.ui.models;
 
-public class ViewAllModels {
+import java.io.Serializable;
+
+public class ViewAllModels implements Serializable {
     String name;
     String description;
     String type;
