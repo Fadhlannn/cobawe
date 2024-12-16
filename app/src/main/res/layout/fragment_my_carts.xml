@@ -39,10 +39,10 @@
             android:layout_marginRight="7dp"
             app:layout_constraintBottom_toTopOf="@+id/buy_now"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0" />
+            app:layout_constraintVertical_bias="0.123" />
 
         <Button
             android:id="@+id/buy_now"
