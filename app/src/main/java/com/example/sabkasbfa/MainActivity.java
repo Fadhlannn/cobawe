@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (auth.getCurrentUser()!=null){
 
+
             startActivity(new Intent(MainActivity.this, HomeActivity.class));
             finish();
         }
