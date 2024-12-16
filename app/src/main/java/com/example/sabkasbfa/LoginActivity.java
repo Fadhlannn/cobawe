@@ -58,10 +58,8 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-                loginUser();
                 progressBar.setVisibility(View.VISIBLE);
-
+                loginUser();
             }
         });
     }
@@ -72,16 +70,19 @@ public class LoginActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(userEmail)){
             Toast.makeText(this, "Email is Empty!", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
             return;
         }
 
         if (TextUtils.isEmpty(userPass)){
             Toast.makeText(this, "Password is Empty!", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
             return;
         }
 
         if (userPass.length()<8){
             Toast.makeText(this,"Password Length must be greater then 8",Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
             return;
         }
 
@@ -89,13 +90,14 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if (task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this,"Login Susccesfully",Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
-                        }else {
-                            Toast.makeText(LoginActivity.this, "Error:"+task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.GONE);
+                        if (task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                            finish();
+                        } else {
+                            String errorMessage = task.getException() != null ? task.getException().getMessage() : "Unknown error";
+                            Toast.makeText(LoginActivity.this, "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
