@@ -11,7 +11,7 @@
         android:id="@+id/imagelogo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/cobaja"
+        android:src="@drawable/cobaja_removebg_preview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +39,7 @@
         android:elevation="3dp"
         android:padding="13dp"
         android:hint="Password"
+        android:inputType="textPassword"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

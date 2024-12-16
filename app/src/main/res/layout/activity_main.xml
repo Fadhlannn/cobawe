@@ -22,28 +22,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="Exploe us"
-        android:textColor="#FFD700"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 
     <ImageView
         android:id="@+id/imageView"
+        android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/cobaja"
+        android:src="@drawable/cobaja_removebg_preview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0" />
 
     <LinearLayout
@@ -98,18 +88,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:textAlignment="center"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:text="Explore the fragrances that reflect your personality. Find the right scent for every special moment."
-        android:textSize="17dp"
-        android:textColor="#FFD700"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearlayout" />
+
 
 
 

@@ -25,7 +25,7 @@
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/baseline_person_24"
+        android:src="@drawable/pasted_image_0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
